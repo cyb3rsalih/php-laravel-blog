@@ -39,6 +39,11 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Hoşgeldiniz</h1>
                   </div>
+                  @if ($errors->any())
+                      <div class="alert alert-danger">
+                        {{$errors->first()}}
+                      </div>
+                  @endif
                   <form method="post" action=" {{route('admin.login.post')}} " class="user">
                     @csrf
                     <div class="form-group">
